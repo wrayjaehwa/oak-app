@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =====================================================
+       CUSTOMIZE — tweak these variables to restyle
+    ===================================================== */
+    :root {
+      --bg:           #fef3e6;
+      --text:         #040203;
+      --muted:        #215129;
+      --accent:       #215129;
+      --accent-text:  #f7f5f2;
+      --border:       #215129;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body:    'Geist', sans-serif;
+      --max-w:        1400px;
+      --nav-h:        84px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 50;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: auto;
+      height: 52px;
+    }
+
+    .logo-mark {
+      /* Swap with <img src="logo.svg" height="28"> */
+      width: 36px;
+      height: 36px;
+      background: var(--text);
+      border-radius: 6px;
+    }
+
+    .logo-name {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 17px;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+    }
+
+    .nav-link {
+      font-size: 15px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav-link:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 64px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: calc(var(--nav-h) + 96px) 20px 56px;
+      min-height: 100vh;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      animation: rise .7s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .headline {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(40px, 5.5vw, 88px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .ital { font-style: italic; }
+
+    .subtext {
+      font-size: 18px;
+      font-weight: 450;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 400px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: none;
+      padding: 12px 32px;
+      border-radius: 10px;
+      transition: opacity .15s, transform .15s;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn:hover { opacity: .75; transform: translateY(-1px); }
+    .btn:active { transform: none; }
+
+    .btn-primary { background: var(--accent); color: var(--accent-text); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    .hero-right {
+      animation: rise .7s .12s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .img-frame {
+      width: 100%;
+      aspect-ratio: 4/4;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--border);
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s cubic-bezier(.22,1,.36,1);
+    }
+    .img-frame picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.img-frame picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+/* Hide mobile-only buttons by default */
+.mobile-actions {
+  display: none;
+}
+
+@media (max-width: 720px), (orientation: portrait) {
+    nav {
+      padding: 0 24px;
+    }
+
+    .nav-links .nav-link {
+      display: none;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: calc(var(--nav-h) + 72px) 20px 48px;
+      gap: 28px;
+      min-height: auto;
+    }
+
+    /* Hide desktop hero text */
+    .hero-left {
+      display: none;
+    }
+
+    .hero-right {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    /* Show mobile buttons only on mobile */
+    .mobile-actions {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .mobile-actions .btn {
+      backdrop-filter: blur(8px);
+      padding: 14px 26px;
+    }
+
+    .img-frame {
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 4 / 5;
+      max-height: 78vh;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo">
+      <!-- Replace div with <img src="logo.svg" height="28" alt="Logo"> -->
+      <img src="./img/oak-logo.png" alt="Logo">
+    </a>
+    <div class="nav-links">
+      <a href="https://docs.google.com/forms/d/1l_EZeLkbHMgmfehB_7CnJTLpkbD694jCNuzj2NtyQVk/edit" target="_blank" class="nav-link">Download</a>
+      <a href="#" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <p class="eyebrow">Early Access</p>
+      <h1 class="headline">
+        Discover cannabis<br>products with <br>real reveiws.
+      </h1>
+      <p class="subtext">
+        Find trusted products near you.
+      </p>
+      <div class="actions">
+        <a href="https://docs.google.com/forms/d/1l_EZeLkbHMgmfehB_7CnJTLpkbD694jCNuzj2NtyQVk/edit" target="_blank" class="btn btn-primary">Get the App →</a>
+        <a href="#" class="btn btn-ghost">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="mobile-actions">
+        <a href="https://docs.google.com/forms/d/1l_EZeLkbHMgmfehB_7CnJTLpkbD694jCNuzj2NtyQVk/edit"
+          target="_blank"
+          class="btn btn-primary">
+          Get the App →
+        </a>
+
+        <a href="#" class="btn btn-ghost">
+          Contact Us
+        </a>
+      </div>
+      <div class="img-frame">
+        <picture>
+
+          <!-- Mobile image -->
+          <source
+            media="(max-width: 720px), (orientation: portrait)"
+            srcset="./img/small-hero.png"
+          />
+
+          <!-- Desktop image -->
+          <img
+            src="./img/big-hero.png"
+            alt="Hero visual"
+          />
+
+        </picture>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
