@@ -190,21 +190,25 @@
       transition: transform .5s cubic-bezier(.22,1,.36,1);
     }
     .img-frame picture {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
 
-.img-frame picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .img-frame picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     @keyframes rise {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .nowrap {
+      white-space: nowrap;
     }
 
 /* Hide mobile-only buttons by default */
@@ -290,7 +294,7 @@
     <div class="hero-left">
       <p class="eyebrow">Early Access</p>
       <h1 class="headline">
-        Discover cannabis<br>products with <br>real reveiws.
+        <span class="nowrap"> Discover cannabis<br></span> <span class="nowrap">products with</span><br>real reveiws.
       </h1>
       <p class="subtext">
         Find trusted products near you.
