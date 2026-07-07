@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oak — Terms & Conditions</title>
+  <link rel="icon" type="image/png" href="./img/oak-favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <meta property="og:title" content="Oak — Terms & Conditions">
+  <meta property="og:description" content="Read Oak's Terms & Conditions.">
+  <meta property="og:image" content="./img/small-hero.png">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg: #fcfaf7;
+      --surface: #f7f2eb;
+      --text: #040203;
+      --muted: #4a5d4d;
+      --accent: #215129;
+      --accent-text: #f7f5f2;
+      --border: #215129;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Geist', sans-serif;
+      --max-w: 900px;
+      --nav-h: 84px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 56px;
+      background: rgba(252, 250, 247, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 50;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: auto;
+      height: 52px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+
+    .nav-link:hover { color: var(--text); }
+
+    .page {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: calc(var(--nav-h) + 56px) 24px 72px;
+    }
+
+    .page-header {
+      margin-bottom: 36px;
+      animation: rise .7s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .headline {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .subtext {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .content-card {
+      background: transparent;
+      border: 1px solid rgba(33, 81, 41, 0.18);
+      border-radius: 18px;
+      padding: 32px;
+      animation: rise .7s .1s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .content-card h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.15;
+      margin: 32px 0 14px;
+      color: var(--text);
+    }
+
+    .content-card h2:first-child {
+      margin-top: 0;
+    }
+
+    .content-card h3 {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin: 26px 0 10px;
+      color: var(--text);
+    }
+
+    .content-card p,
+    .content-card li {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .content-card p {
+      margin-bottom: 16px;
+    }
+
+    .content-card ul,
+    .content-card ol {
+      margin: 0 0 18px 20px;
+    }
+
+    .content-card li {
+      margin-bottom: 10px;
+    }
+
+    .placeholder {
+      padding: 18px 20px;
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px dashed rgba(33, 81, 41, 0.35);
+      border-radius: 12px;
+      color: var(--muted);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 26px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .back-link:hover { opacity: 0.75; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 720px), (orientation: portrait) {
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .page {
+        padding: calc(var(--nav-h) + 32px) 18px 48px;
+      }
+
+      .content-card {
+        padding: 22px 18px;
+        border-radius: 16px;
+      }
+
+      .nav-link {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="./index.html" class="logo">
+      <img src="./img/oak-logo.png" alt="Oak logo">
+    </a>
+    <div class="nav-links">
+      <a href="./terms.html" class="nav-link">Terms</a>
+      <a href="./privacy.html" class="nav-link">Privacy</a>
+      <a href="./guidelines.html" class="nav-link">Guidelines</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <header class="page-header">
+      <p class="eyebrow">Legal</p>
+      <h1 class="headline">Terms & Conditions</h1>
+      <p class="subtext">
+        Oak is operated by Oak Social LLC. These Terms explain the basic rules for using Oak. 
+      </p>
+    </header>
+
+    <section class="content-card">
+      <h2>Terms & Conditions</h2>
+      <p><strong>Effective date:</strong> May 26, 2026</p>
+      <p><strong>Contact:</strong> info@oakco.app</p>
+
+      <!-- Example structure you can keep or replace -->
+      <h3>Who Can Use Oak</h3>
+      <p>
+        You must be 21 or older to use Oak. 
+        You are responsible for following the cannabis laws where you live or use the app.
+      </p>
+
+      <h3>What Oak Is</h3>
+      <p>
+        Oak helps adults discover cannabis products, read reviews, and share their own experiences. Oak does not sell, deliver, ship, distribute, or arrange cannabis sales. 
+      </p>
+
+      <h3>Product Information</h3>
+      <p>
+        Product names, ratings, prices, THC/CBD details, dispensary information, availability, and other details may be incomplete, outdated, user-submitted, or incorrect. 
+        Please confirm important details directly with the licensed dispensary or product provider before making any purchase decision. 
+        You are responsible for your own decisions. 
+      </p>
+
+      <h3>No Medical or Legal Advice</h3>
+      <p>
+        Oak is for information and community discussion only. 
+        Nothing in the app is medical, legal, health, purchasing, or professional advice. 
+      </p>
+
+      <h3>Your Content</h3>
+      <p>
+        When you post reviews, photos, ratings, comments, or product submissions, you are responsible for what you share. 
+        You own your content, but you allow Oak to host, store, display, copy, format, moderate, remove, and use it to operate, improve, and promote the app. 
+      </p>
+
+      <h3>Oak's Platform</h3>
+      <p>
+        Oak's name, logo, app design, product database, scoring systems, collectibles, graphics, features, and platform content belong to Oak or its licensors. 
+        Do not copy, scrape, sell, reverse engineer, or misuse Oak's app, data, branding, or content. 
+      </p>
+
+      <h3>Beta App</h3>
+      <p>
+        Oak is in closed beta, which means the app is still being tested and improved. 
+        Features may be unfinished, unavailable, changed, removed, reset, or paused. 
+        Bugs, errors, crashes, missing data, or inaccurate information may happen. 
+        Some beta data may not carry over if the app changes. 
+        If you share feedback, ideas, or bug reports, Oak may use them to improve the app. 
+      </p>
+
+      <h3>Account Rules</h3>
+      <p>
+        Do not use Oak to break the law, post fake reviews, harass others, post medical claims, arrange illegal cannabis sales, copy app data, or interfere with the app. 
+        Oak may remove content, limit features, or suspend accounts that break these rules or create risk for Oak or other users. 
+      </p>
+
+      <h3>No Guarantees</h3>
+      <p>
+        Oak is provided "as is" and "as available." 
+        We do not guarantee that the app, product information, dispensary information, reviews, ratings, prices, availability, or other content will be accurate, complete, available, or error-free. 
+      </p>
+
+      <h3>Limitation of Responsibilty</h3>
+      <p>
+        To the fullest extent allowed by law, Oak is not responsible for losses or damages related to your use of the app, reliance on product information, user content, dispensary information, beta issues, bugs, unavailable features, or decisions you make based on information in the app. 
+      </p>
+
+      <h3>Contact</h3>
+      <p>
+        Questions? Contact us at info@oakco.app.
+      </p>
+
+      <a href="./index.html" class="back-link">← Back to home</a>
+    </section>
+  </main>
+</body>
+</html>

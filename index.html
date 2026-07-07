@@ -222,6 +222,72 @@
   display: none;
 }
 
+  /* Footer */
+.site-footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 30px 40px;
+}
+
+.footer-inner {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .15s, opacity .15s;
+}
+
+.footer-link:hover {
+  color: var(--text);
+  opacity: 1;
+}
+
+@media (max-width: 720px), (orientation: portrait) {
+  body {
+    min-height: 100svh;
+  }
+
+  .hero {
+    min-height: calc(100svh - var(--nav-h));
+  }
+
+  .site-footer {
+    margin-top: auto;
+    padding: 0 20px 20px;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-top: 18px;
+  }
+}
+
 @media (max-width: 720px), (orientation: portrait) {
     nav {
       padding: 0 24px;
@@ -342,6 +408,17 @@
       </div>
     </div>
   </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© Oak</p>
+      <div class="footer-links">
+        <a href="./privacy.html" class="footer-link">Privacy</a>
+        <a href="./terms.html" class="footer-link">Terms</a>
+        <a href="./guidelines.html" class="footer-link">Guidelines</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
