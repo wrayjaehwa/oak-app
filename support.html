@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oak — Community Guidelines</title>
+  <title>Oak — Support</title>
   <link rel="icon" type="image/png" href="./img/oak-favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <meta property="og:title" content="Oak — Community Guidelines">
-  <meta property="og:description" content="Read Oak's Community Guidelines.">
+  <meta property="og:title" content="Oak — Support">
+  <meta property="og:description" content="Contact Oak for account assistance, technical issues, safety concerns, and general questions.">
   <meta property="og:image" content="./img/small-hero.png">
   <meta property="og:type" content="website">
 
@@ -52,6 +52,49 @@
       border-bottom: 1px solid var(--border);
       z-index: 50;
     }
+
+      /* Footer */
+.site-footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 30px 40px;
+}
+
+.footer-inner {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .15s, opacity .15s;
+}
+
+.footer-link:hover {
+  color: var(--text);
+  opacity: 1;
+}
 
     .logo {
       display: flex;
@@ -167,13 +210,24 @@
       margin-bottom: 10px;
     }
 
-    .placeholder {
+    .support-highlight {
       padding: 18px 20px;
-      margin-top: 18px;
+      margin: 18px 0 8px;
       background: var(--surface);
-      border: 1px dashed rgba(33, 81, 41, 0.35);
+      border: 1px solid rgba(33, 81, 41, 0.22);
       border-radius: 12px;
-      color: var(--muted);
+    }
+
+    .support-highlight a,
+    .content-card a.inline-link {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .support-highlight a:hover,
+    .content-card a.inline-link:hover {
+      opacity: 0.75;
     }
 
     .back-link {
@@ -224,7 +278,7 @@
       <img src="./img/oak-logo.png" alt="Oak logo">
     </a>
     <div class="nav-links">
-      <a href="./support.html" class="nav-link">Support</a>
+      <a href="./support.html" class="footer-link">Support</a>
       <a href="./terms.html" class="nav-link">Terms</a>
       <a href="./privacy.html" class="nav-link">Privacy</a>
       <a href="./guidelines.html" class="nav-link">Guidelines</a>
@@ -233,59 +287,60 @@
 
   <main class="page">
     <header class="page-header">
-      <p class="eyebrow">Legal</p>
-      <h1 class="headline">Community Guidelines</h1>
+      <p class="eyebrow">Support</p>
+      <h1 class="headline">Oak Support</h1>
       <p class="subtext">
-        Oak works best when users share honest, helpful, and respectful cannabis product experiences.
+        For account assistance, technical issues, safety concerns, or questions about Oak, reach out to our team and we will help direct your request.
+      </p>
     </header>
 
     <section class="content-card">
-      <h2>Community Guidelines</h2>
-      <p><strong>Last updated:</strong> July 7, 2026</p>
-      <p><strong>Contact:</strong> info@oakco.app</p>
+      <h2>Contact Support</h2>
+      <div class="support-highlight">
+        <p>
+          For account assistance, technical issues, safety concerns, or questions about Oak, contact:
+          <a href="mailto:info@oakco.app">info@oakco.app</a>
+        </p>
+      </div>
+      <p>We aim to respond to safety and content reports within 24 hours.</p>
 
-      <!-- Example structure you can keep or replace -->
-      <h3>Be Honest</h3>
+      <h3>What To Include</h3>
       <p>
-        Only review products based on your real experience. 
-        Do not post fake, copied, paid, or misleading reviews. 
-        If you work for a brand or dispensary, received a free product, or were paid or incentivized to post, clearly say that. 
+        To help us review your request faster, include the email tied to your account, the device you are using, and a short description of the issue or concern.
       </p>
 
-      <h3>Be Respectful</h3>
+      <h3>Safety and Content Reports</h3>
       <p>
-        Do not harass, threaten, bully, shame, attack others, or post hateful or abusive content. 
+        If you are reporting harmful content, impersonation, harassment, or another safety issue, please include links, screenshots, usernames, and any relevant context so our team can investigate.
       </p>
 
-      <h3>No Illegal Sales</h3>
+      <h3>Technical Issues</h3>
       <p>
-        Do not use Oak to buy, sell, trade, ship, deliver, or arrange cannabis outside licensed legal channels.
-        Oak is not a marketplace and does not sell cannabis. 
+        If something in Oak is not working as expected, tell us what happened, when it happened, and what steps you took before the issue appeared. This makes it easier for us to reproduce and fix problems.
       </p>
 
-      <h3>No Medical Claims</h3>
+      <h3>General Questions</h3>
       <p>
-        You can share your personal experience, but do not claim that a product cures, treats, prevents, or diagnoses a medical condition. 
-        Do not tell users to use cannabis instead of medical care or professional advice. 
-      </p>
-
-      <h3>Keep It Safe</h3>
-      <p>
-        Do not post private information, content involving minors, illegal activity, unsafe behavior, spam, misleading promotions, or content you do not have the right to share. 
-      </p>
-
-      <h3>Moderation</h3>
-      <p>
-        Oak may remove posts, limit features, or suspend accounts that break these guidelines or create risk for the community. 
-      </p>
-
-      <h3>Contact</h3>
-      <p>
-        Questions? Contact us at info@oakco.app.
+        For general support or partnership questions, email
+        <a href="mailto:info@oakco.app" class="inline-link">info@oakco.app</a>
+        and we will route your message to the right place.
       </p>
 
       <a href="./index.html" class="back-link">← Back to home</a>
     </section>
   </main>
+
+   <!-- <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© Oak</p>
+      <div class="footer-links">
+        
+        <a href="./terms.html" class="footer-link">Terms</a>
+        <a href="./privacy.html" class="footer-link">Privacy</a>
+        <a href="./guidelines.html" class="footer-link">Guidelines</a>
+      </div>
+    </div>
+  </footer> -->
+
 </body>
 </html>
